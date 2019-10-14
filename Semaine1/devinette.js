@@ -11,5 +11,4 @@ rli.on("line",(userinput)=>{
         console.log("Trouvé !")
         rli.close()
     }
-
 })
