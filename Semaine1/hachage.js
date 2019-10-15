@@ -35,9 +35,8 @@ function verif(cle, message){
 }
 //Founction qui donne la chaine dont le hash commence par 66
 function randomHash(){
-   
+    //info
 }
-//console.log("Condensat:", pseudohachage(process.argv[2]))
 
 console.log("Condensat de Condensat:", doubleHash(process.argv[2]))
 console.log("Condensat:", sha256(process.argv[2]))
