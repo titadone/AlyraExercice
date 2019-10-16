@@ -3,21 +3,31 @@ const rli = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 })
-console.log("Deviner le numero entre 0 et 10")
-let solution = Math.floor(Math.random()*10+1)
+console.log("Devinez un nombre entre 1 et 100")
+let solution = Math.floor(Math.random()*100+1)
+console.log("DEBUG: ",solution)
 rli.on("line",(userinput)=>{
-    console.log(`Vous avez entré: ${userinput}, essaye encore (solution vaut ${solution})!`)
     if (userinput == solution){
-        console.log("Trouvé !")
+        console.log("Exact !")
         rli.close()
     }
-    if(userinput>10){
-        console.log("Attention le nombre est compris entre 0 et 10 uniquement")
+    let difference = userinput-solution
+    if(difference>10){
+        console.log("C'est beaucoup moins")
     }
-    if(userinput>solution){
-        console.log("Indice, la solution est plus petit que",userinput)
+    if((difference>=6) && (difference<=10)){
+        console.log("C'est un peu moins")
     }
-    if(userinput<solution){
-        console.log("Indice la solution est plus grande que",userinput)
+    if(difference >0 && difference <=5){
+        console.log("C'est un tout petit peu moins")
+    }
+    if(difference <-10){
+        console.log("C'est beaucoup plus")
+    }
+    if(difference <=-6 && difference>=-10){
+        console.log("C'est un peu plus")
+    }
+    if(difference >= -5 && difference<0){
+        console.log("C'est un tout petit peu plus")
     }
 })
