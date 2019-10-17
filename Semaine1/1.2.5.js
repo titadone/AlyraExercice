@@ -27,24 +27,43 @@ class Arbre {
     
     //Méthode pour trouver une valeur donnée dans un arbre binaire de recherche
     trouverNoeud(valeur) {
-        let rac = this.racine
-        while(rac.valeur != valeur){
-            if(rac.gauche.valeur < valeur)
+        while(){
+
         }
+        return 
         
     }
     
     //Méthode pour ajouter un noeud
     ajouterNoeud(valeur) {
+        //Si arbre vide
+        if (this.racine == undefined ){
+            this.racine = new Noeud(valeur)
+        }
+        else{
+            if(this.racine.gauche == undefined){
+                this.racine.gauche = new Noeud(valeur)
+            }else if(this.racine.droit == undefined){
+                this.racine.droit = new Noeud(valeur)
+            }
+            
+        }
     }
     
     //Méthode pour supprimer un noeud
     supprimerNoeud(valeur) {
+        if(this.racine.valeur == valeur){
+            this.racine.valeur = undefined
+        }else{
+            this.racine.supprimerNoeud(valeur)
+        }
     }
     
     //Méthode pour afficher l’arbre selon un parcours infixe
     //Cette méthode doit retournée un tableau contenant la valeur des noeuds
     infixe() {
+        let tableau
+        
     }
     
     //Méthode pour afficher la valeur d'un noeud à partir de sa valeur
@@ -53,3 +72,24 @@ class Arbre {
         if (noeud !== undefined) noeud.toString();
     }
 }
+
+let a = new Arbre();
+a.ajouterNoeud(30);
+a.ajouterNoeud(18);
+a.ajouterNoeud(24);
+a.ajouterNoeud(11);
+a.ajouterNoeud(33);
+a.ajouterNoeud(13);
+a.ajouterNoeud(40);
+a.ajouterNoeud(46);
+a.ajouterNoeud(14);
+a.ajouterNoeud(21);
+a.ajouterNoeud(12);
+a.ajouterNoeud(10);
+a.ajouterNoeud(31);
+a.ajouterNoeud(35);
+a.ajouterNoeud(32);
+
+console.log(a.racine.toString);
+
+//console.log(a.infixe());
