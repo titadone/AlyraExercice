@@ -11,4 +11,4 @@ function occurence(chaine){
     console.log(tab)
 }
 
-occurence("Testteesdfft")
+occurence("Te sttees dfft ttreoeer")
