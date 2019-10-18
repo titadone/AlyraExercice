@@ -1,6 +1,6 @@
-const crypto = require("crypto")
+const crypto = require('crypto')
 var RIPEMD160 = require('ripemd160')
-const Base58 = require('base58')
+const bs58 = require('bs58')
 
 function sha256(chaine){
     //Convertir value en décimal
@@ -27,14 +27,12 @@ if(process.argv[2] == "-t"){
     val = sha256(sha256(prefixe))
     fin = prefixe+val.toString("hex").substr(0,8)
 }
-
-
-
+/*
 console.log(alea)
 console.log(hash160)
 console.log(prefixe)
 console.log(val.toString("hex"))
 console.log(val.toString("hex").substr(0,8))
 console.log(fin)
-console.log(Buffer.from(fin,"binary"))
-console.log(Base58(Buffer.from(fin,"binary")))
+*/
+console.log(bs58.encode(Buffer.from(fin,"binary")))
