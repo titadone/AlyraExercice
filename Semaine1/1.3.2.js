@@ -8,6 +8,10 @@ function occurence(chaine){
         }
     }
     console.log(tab)
+    tab.forEach(value,key){
+        console.log(`${key}, ${value}`);
+        tab.get
+    }
 }
 
-occurence("Te sttees dfft ttreoeer")
+occurence("Etre contesté, c’est être constaté")
