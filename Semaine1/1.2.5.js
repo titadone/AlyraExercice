@@ -94,7 +94,7 @@ class Arbre {
     infixe() {
         let sousArbre = this.racine
         let arbreS = sousArbre.valeur
-        while(sousArbre != undefined){
+        while(sousArbre !== undefined){
             if(sousArbre.gauche){
             arbreS += this.gauche.valeur
             sousArbre = this.gauche.afficherSousArbre()
