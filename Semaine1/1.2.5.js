@@ -7,9 +7,9 @@ class Noeud {
     }
     
     ajouter(valeur) {
-        if (this.gauche == undefined)
+        if (this.gauche === undefined)
             this.gauche = new Noeud(valeur)
-        else if (this.droite == undefined)
+        else if (this.droite === undefined)
             this.droite = new Noeud(valeur)
         else 
             this.gauche.ajouter(valeur)
@@ -30,13 +30,13 @@ class Noeud {
     }
 
     afficherSousArbre() {
-    let sousArbre = this.valeur.toString()
-    if(this.gauche)
-      sousArbre += '('+ this.gauche.afficherSousArbre() +')'
-    if(this.droite)
-      sousArbre += '('+ this.droite.afficherSousArbre() +')'
-    return  sousArbre
-  }
+        let sousArbre = this.valeur.toString()
+        if(this.gauche)
+            sousArbre += '('+ this.gauche.afficherSousArbre() +')'
+        if(this.droite)
+            sousArbre += '('+ this.droite.afficherSousArbre() +')'
+        return sousArbre
+    }
 }
 class Arbre {
     constructor() {
@@ -48,12 +48,11 @@ class Arbre {
         let sous = this.racine
         while(sous.gauche === undefined && sous.droite === undefined){
             if(sous.valeur == valeur){
-                return sous
+                return this.printNoeud(valeur)
             }if(sous.gauche != undefined){
                 sous.gauche.trouverNoeud(valeur)
             }
         }
-        
     }
     
     //Méthode pour ajouter un noeud
@@ -136,6 +135,6 @@ a.ajouterNoeud(31);
 a.ajouterNoeud(35);
 a.ajouterNoeud(32);
 
-console.log(a.afficherArbre());
-
-console.log(a.infixe());
+console.log(a.afficherArbre())
+console.log(a.trouverNoeud(21))
+//console.log(a.infixe());
