@@ -22,16 +22,7 @@ function blocReajustement(hauteurBloc){
     return false
 }
 
-
 function recompenseBloc(hauteurBloc){
-    let palier = Math.floor(hauteurBloc / 210000);
-	let recompense = 50 * Math.pow(10, 8);
-	for (let i = 0; i < palier; i++) {
-		recompense = Math.floor(recompense / 2);
-		if (recompense === 0) {
-			break;
-		}
-	}
-	return recompense / Math.pow(10, 8);
+    let coef = Math.floor(hauteurBloc/210000)
+    return (50/(Math.pow(2,coef)))
 }
-
