@@ -10,7 +10,7 @@ function conversionHexToDec(chaine){
 }
 
 function conversionDecToHex(nombre){
-    let tableau = [[1,"1"],[2,"2"],[3,"3"],[4,"4"],[5,"5"],[6,"6"],[7,"7"],[8,"8"],[9,"9"],[10,"A"],[11,"B"],[12,"C"],[13,"D"], [14,"E"],[15,"F"]]
+    let tableau = [[1,"1"],[2,"2"],[3,"3"],[4,"4"],[5,"5"],[6,"6"],[7,"7"],[8,"8"],[9,"9"],[10,"A"],[11,"B"],[12,"C"],[13,"D"],[14,"E"],[15,"F"]]
     let hexa = new Map(tableau)
     let resultat = ""
     let intervalle = 0
@@ -46,11 +46,14 @@ function conversionLittle(chaine){
     }
     return chaineLittle
 }
-
-//console.log(conversionHexToDec("2C"))
-//console.log(conversionHexToDec("1EF"))
-//console.log(conversionDecToHex(495))
-//console.log(conversionLittle("1EF5A"))
+/*
+console.log(conversionDecToHex("3841"))
+console.log(conversionHexToDec("2C"))
+console.log(conversionHexToDec("1EF"))
+console.log(conversionDecToHex(495))
+console.log(conversionLittle("1EF5A"))
+*/
+//Wasabi wallet
 
 
 $("document").ready(function(){

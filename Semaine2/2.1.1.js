@@ -26,3 +26,31 @@ function recompenseBloc(hauteurBloc){
     let coef = Math.floor(hauteurBloc/210000)
     return (50/(Math.pow(2,coef)))
 }
+
+function bitcoinsEnCirculation(hauteurBloc){
+    let reste = hauteurBloc
+    let total = 50
+    let i = 0
+    while(reste>0){
+        if((reste/209999)>1){
+            total += 209999*(50/Math.pow(2,i))
+            reste -= 209999
+        }else{
+            total += reste *(50/Math.pow(2,i))
+            reste = 0 
+        }
+        i++
+    }
+    return total
+}
+
+console.log(bitcoinsEnCirculation(0))
+//50
+console.log(bitcoinsEnCirculation(1))
+//100
+console.log(bitcoinsEnCirculation(210000))
+//10500025
+console.log(bitcoinsEnCirculation(2100001))
+//20979492.28515624
+
+console.log(210000*50)
