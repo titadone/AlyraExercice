@@ -4,6 +4,12 @@ $(document).ready(function(){
         $.each(json, function(key,val){
             if(key == "tx"){
                 output += '<tr><th>Nombre de transaction(s)</th><td>'+ val.length+ '</td></tr>';
+                $.each(val, function(key, vol){
+                    output += '<tr><th>Transaction n° '+ key + '</th> <td>-------------------</td></tr>';
+                    $.each(vol, function(koy,vil){
+                        output += '<tr><th>'+ koy + "</th> <td>" + vil+ '</td></tr>';
+                    });
+                });
             }
             if(key == "prev_block"){
                 output += '<tr><th>'+ key + "</th> <td>" + val+ '</td></tr>';
