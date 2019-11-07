@@ -10,7 +10,7 @@ contract CagnotteFestival{
 
     function transfererOrga(address orga, uint parts) public {
         organisateurs[orga] = parts;
-        organisateurs[]
+        //organisateurs[]
     }
 
 }
